@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/register_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="@drawable/login_background">
+
+    <EditText
+        android:id="@+id/RegisterPwd"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/RegisterButton"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        android:gravity="start"
+        android:hint="Mot de passe"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/RegisterMail"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/RegisterPwd"
+        android:layout_below="@+id/Pseudo"
+        android:background="@android:color/transparent"
+        android:gravity="start"
+        android:hint="Adresse mail"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/Surname"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:gravity="start"
+        android:hint="Nom"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/Surname"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/Pseudo"
+        android:layout_below="@+id/Name"
+        android:background="@android:color/transparent"
+        android:gravity="start"
+        android:hint="Prenom"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/Pseudo"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/RegisterMail"
+        android:layout_below="@+id/Surname"
+        android:background="@android:color/transparent"
+        android:gravity="start"
+        android:hint="Pseudonyme"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <Button
+        android:id="@+id/RegisterButton"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/filled_button"
+        android:onClick="btnRegister"
+        android:text="S'inscrire"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:text="Creer un compte"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/RegisterButton"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="59dp"
+        android:background="@drawable/bouton_fb" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+
+        android:layout_alignEnd="@+id/RegisterButton"
+        android:layout_alignTop="@+id/button2"
+        android:background="@drawable/bouton_google"
+         />
+</RelativeLayout>

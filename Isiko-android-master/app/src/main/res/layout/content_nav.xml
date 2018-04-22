@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.isiko.isiko.NavActivity"
+    tools:showIn="@layout/app_bar_nav"
+    android:background="#CCCCCC"
+    android:orientation="vertical"
+    android:id="@+id/contentLayout">
+
+    <TextView
+        android:text="Musée d'Orsay\nCharles Cordier,\nl'autre est ailleurs "
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="@drawable/top_home"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <Button
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Expositions"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/filled_button"/>
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/expo_tmp_1"
+            android:layout_width="@dimen/expo_picture_width"
+            android:layout_height="@dimen/expo_picture_height" />
+
+        <ImageView
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/expo_tmp_2"
+            android:layout_width="@dimen/expo_picture_width"
+            android:layout_height="@dimen/expo_picture_height" />
+
+        <ImageView
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/expo_tmp_3"
+            android:layout_width="@dimen/expo_picture_width"
+            android:layout_height="@dimen/expo_picture_height" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/new_1"
+            android:layout_width="@dimen/expo_picture_width"
+            android:layout_height="@dimen/expo_picture_height" />
+
+        <ImageView
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/new_2"
+            android:layout_width="@dimen/expo_picture_width"
+            android:layout_height="@dimen/expo_picture_height" />
+
+        <ImageView
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/new_3"
+            android:layout_width="@dimen/expo_picture_width"
+            android:layout_height="@dimen/expo_picture_height" />
+
+    </LinearLayout>
+</LinearLayout>

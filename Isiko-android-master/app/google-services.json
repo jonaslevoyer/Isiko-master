@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "648069522277",
+    "firebase_url": "https://monos-173915.firebaseio.com",
+    "project_id": "monos-173915",
+    "storage_bucket": "monos-173915.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648069522277:android:ef81385feb22fbc7",
+        "android_client_info": {
+          "package_name": "com.isiko.isiko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648069522277-sbka4hvcuk4ud3jq854snhi8iing8jur.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.isiko.isiko",
+            "certificate_hash": "4df0855c92d3848622a0134c6198da41d90f143a"
+          }
+        },
+        {
+          "client_id": "648069522277-n21ho0ev23k0dm6cfb8ebld0hkimvhei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa7QOJXApelLF5biIIwTleyncmD3YM63M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648069522277-n21ho0ev23k0dm6cfb8ebld0hkimvhei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

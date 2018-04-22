@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Isiko</string>
+    <string name="title_activity_nav">NavActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="about_us">A propos de nous</string>
+    <string name="isiko">Isiko</string>
+    <string name="profil">Profil</string>
+    <string name="favorite">Favoris</string>
+    <string name="expositions">Expositions</string>
+    <string name="authors">Auteurs</string>
+    <string name="deconnection">Déconnexion</string>
+    <string name="twitter">Twitter</string>
+    <string name="facebook">Facebook</string>
+    <string name="home">Home</string>
+    <string name="oeuvres">Oeuvres</string>
+    <string name="Visites" />
+    <string name="options">Options</string>
+    <string name="accueil">Accueil</string>
+    <string name= "Login">Connexion</string>string>
+</resources>

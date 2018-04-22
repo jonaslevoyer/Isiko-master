@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/isiko_black</item>
+        <item name="colorPrimaryDark">@color/isiko_black</item>
+        <item name="colorAccent">@color/isiko_black</item>
+
+        <item name="android:textSize">40sp</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColor">@color/isiko_yellow</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColorSecondary">@color/isiko_yellow</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/isiko_yellow</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    // TODO: change toolbar icons color
+</resources>
