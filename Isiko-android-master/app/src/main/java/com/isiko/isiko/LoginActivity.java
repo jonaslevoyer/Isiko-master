@@ -45,28 +45,6 @@ public class LoginActivity extends AppCompatActivity {
         loginPwd = (EditText) findViewById(R.id.LoginPwd);
         FirebaseApp.initializeApp(this);
         firebaseAuth = FirebaseAuth.getInstance();
-        String url = "http://api.isiko.io/api/loginUsers/";
-        try {
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        JSONObject jsonBody = new JSONObject();
-        jsonBody.put("Pseudo", "maxime");
-        jsonBody.put("Password", "Cyr10277");
-        final String requestBody = jsonBody.toString();
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.d("VOLLEY", response);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-        requestQueue.add(stringRequest);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
     }
     public void btnLogin(View v) {
         final ProgressDialog progressDialog = ProgressDialog.show(LoginActivity.this, "Please wait...", "Processing...",true);

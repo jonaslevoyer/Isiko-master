@@ -25,6 +25,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Oeuvres extends AppCompatActivity {
@@ -36,11 +38,34 @@ public class Oeuvres extends AppCompatActivity {
         final TextView mTxtDisplay;
         ImageView mImageView;
         mTxtDisplay = (TextView) findViewById(R.id.txtDisplay);
-        String url = "http://api.isiko.io/api/getExhibitionses/";
+        String url1 = "http://api.isiko.io/api/getExhibitionses/";
+        String url2 = "http://api.isiko.io/api/loginUsers/";
+        try {
+            RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+            JSONObject jsonBody = new JSONObject();
+            jsonBody.put("usermail", "maxime");
+            jsonBody.put("password", "Cyr10277");
+
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url2, jsonBody, new com.android.volley.Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    Log.d("VOLLEY", response.toString());
+                }
+            }, new com.android.volley.Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                }
+            });
+            requestQueue.add(jsonObjectRequest);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JSONObject jsonBody = new JSONObject();
-        final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new com.android.volley.Response.Listener<JSONObject>() {
+        final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url1, null, new com.android.volley.Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 mTxtDisplay.setText("Response: " + response.toString());
