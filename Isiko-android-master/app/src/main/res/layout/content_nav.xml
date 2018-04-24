@@ -7,9 +7,9 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.isiko.isiko.NavActivity"
     tools:showIn="@layout/app_bar_nav"
-    android:background="#CCCCCC"
     android:orientation="vertical"
-    android:id="@+id/contentLayout">
+    android:id="@+id/contentLayout"
+    android:background="@color/isiko_black">
 
     <TextView
         android:text="Musée d'Orsay\nCharles Cordier,\nl'autre est ailleurs "
@@ -37,7 +37,8 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <ImageView
             android:src="@drawable/expo_tmp_1"

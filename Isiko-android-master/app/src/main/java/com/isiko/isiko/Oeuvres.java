@@ -15,6 +15,7 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.api.Response;
@@ -39,10 +40,10 @@ public class Oeuvres extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JSONObject jsonBody = new JSONObject();
-        final StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
+        final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new com.android.volley.Response.Listener<JSONObject>() {
             @Override
-            public void onResponse(String response) {
-                Log.d("VOLLEY", response);
+            public void onResponse(JSONObject response) {
+                mTxtDisplay.setText("Response: " + response.toString());
             }
         }, new com.android.volley.Response.ErrorListener() {
             @Override
@@ -50,6 +51,6 @@ public class Oeuvres extends AppCompatActivity {
                 Log.wtf("VOLLEY", error.networkResponse.toString());
             }
         });
-        requestQueue.add(stringRequest);
+        requestQueue.add(jsonObjectRequest);
         }
 }
