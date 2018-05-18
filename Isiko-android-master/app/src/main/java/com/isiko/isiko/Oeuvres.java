@@ -44,7 +44,7 @@ public class Oeuvres extends AppCompatActivity {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
 
             JSONObject jsonBody = new JSONObject();
-            jsonBody.put("usermail", "maxime");
+            jsonBody.put("usermail", "thibaud.letard@epitech.eu");
             jsonBody.put("password", "Cyr10277");
 
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url2, jsonBody, new com.android.volley.Response.Listener<JSONObject>() {
@@ -77,5 +77,5 @@ public class Oeuvres extends AppCompatActivity {
             }
         });
         requestQueue.add(jsonObjectRequest);
-        }
+    }
 }

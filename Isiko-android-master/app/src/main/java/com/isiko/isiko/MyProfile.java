@@ -24,7 +24,7 @@ public class MyProfile extends AppCompatActivity {
         final TextView mTxtDisplay;
         ImageView mImageView;
         mTxtDisplay = (TextView) findViewById(R.id.txtDisplay);
-        String url = "http://api.isiko.io/api/getExhibitionses/";
+        String url = "http://api.isiko.io/api/getUser/";
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JSONObject jsonBody = new JSONObject();

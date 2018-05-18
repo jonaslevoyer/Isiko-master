@@ -37,7 +37,7 @@
         android:textColorHint="#FFFFFF" />
 
     <EditText
-        android:id="@+id/Name"
+        android:id="@+id/RegisterName"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_alignStart="@+id/Surname"
@@ -55,7 +55,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_alignStart="@+id/Pseudo"
-        android:layout_below="@+id/Name"
+        android:layout_below="@+id/RegisterName"
         android:background="@android:color/transparent"
         android:gravity="start"
         android:hint="Prenom"

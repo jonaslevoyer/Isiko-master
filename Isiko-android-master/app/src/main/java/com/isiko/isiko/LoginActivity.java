@@ -35,7 +35,6 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     private EditText loginMail;
     private EditText loginPwd;
-    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,25 +42,31 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.login_page);
         loginMail = (EditText) findViewById(R.id.LoginMail);
         loginPwd = (EditText) findViewById(R.id.LoginPwd);
-        FirebaseApp.initializeApp(this);
-        firebaseAuth = FirebaseAuth.getInstance();
+
     }
     public void btnLogin(View v) {
-        final ProgressDialog progressDialog = ProgressDialog.show(LoginActivity.this, "Please wait...", "Processing...",true);
-        (firebaseAuth.signInWithEmailAndPassword(loginMail.getText().toString(), loginPwd.getText().toString()))
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
-                        if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Connexion reussie", Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(LoginActivity.this, NavActivity.class);
-                            startActivity(i);
-                        }
-                        else {
-                            Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
+        String url = "http://api.isiko.io/api/loginUsers/";
+        try {
+            RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+            JSONObject postparams=new JSONObject();
+            postparams.put("usermail", loginMail.toString());
+            postparams.put("password", loginPwd.toString());
+
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, postparams, new com.android.volley.Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    Log.d("VOLLEY", response.toString());
+                }
+            }, new com.android.volley.Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d("VOLLEY", error.toString());
+                }
+            });
+            requestQueue.add(jsonObjectRequest);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
