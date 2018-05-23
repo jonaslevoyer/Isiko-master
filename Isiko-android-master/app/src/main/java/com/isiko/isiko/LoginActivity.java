@@ -62,7 +62,10 @@ public class LoginActivity extends AppCompatActivity {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonBody, new com.android.volley.Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
+                    Intent myIntent = new Intent(LoginActivity.this, NavActivity.class);
+                    LoginActivity.this.startActivity(myIntent);
                     Log.d("VOLLEY", response.toString());
+
                 }
             }, new com.android.volley.Response.ErrorListener() {
                 @Override

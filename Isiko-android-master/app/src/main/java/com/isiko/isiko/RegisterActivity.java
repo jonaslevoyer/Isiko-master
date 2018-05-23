@@ -62,6 +62,8 @@ public class RegisterActivity extends AppCompatActivity
                 @Override
                 public void onResponse(JSONObject response) {
                     Log.d("VOLLEY", response.toString());
+                    Intent myIntent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    RegisterActivity.this.startActivity(myIntent);
                 }
             }, new com.android.volley.Response.ErrorListener() {
                 @Override

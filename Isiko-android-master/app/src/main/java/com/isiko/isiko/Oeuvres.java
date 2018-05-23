@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,15 +16,8 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,47 +28,30 @@ public class Oeuvres extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.oeuvres);
-        final TextView mTxtDisplay;
-        ImageView mImageView;
-        mTxtDisplay = (TextView) findViewById(R.id.txtDisplay);
-        String url1 = "http://api.isiko.io/api/getExhibitionses/";
-        String url2 = "http://api.isiko.io/api/loginUsers/";
-        try {
+    }
+    public void btnExhibitions(View v){
+        String url = "http://api.isiko.io/api/getExhibitionses/";
             RequestQueue requestQueue = Volley.newRequestQueue(this);
-
-            JSONObject jsonBody = new JSONObject();
-            jsonBody.put("usermail", "thibaud.letard@epitech.eu");
-            jsonBody.put("password", "Cyr10277");
-
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url2, jsonBody, new com.android.volley.Response.Listener<JSONObject>() {
+            StringRequest ExhibitionsRequest = new StringRequest(Request.Method.GET, url, new com.android.volley.Response.Listener<String>() {
                 @Override
-                public void onResponse(JSONObject response) {
+                public void onResponse(String response) {
                     Log.d("VOLLEY", response.toString());
                 }
             }, new com.android.volley.Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-
+                    Log.d("VOLLEY", error.toString());
                 }
-            });
-            requestQueue.add(jsonObjectRequest);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        JSONObject jsonBody = new JSONObject();
-        final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url1, null, new com.android.volley.Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                mTxtDisplay.setText("Response: " + response.toString());
-            }
-        }, new com.android.volley.Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.wtf("VOLLEY", error.networkResponse.toString());
-            }
-        });
-        requestQueue.add(jsonObjectRequest);
+            }) {
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<String, String>();
+                    params.put("Content-Type", "application/json");
+                    params.put("Authorization", "Basic " + Base64.encodeToString("maxime:Cyr10277".getBytes(), Base64.NO_WRAP));
+                    return params;
+                }};
+            requestQueue.add(ExhibitionsRequest);
     }
 }
+
+
