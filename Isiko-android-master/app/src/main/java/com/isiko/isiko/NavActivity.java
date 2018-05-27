@@ -101,14 +101,16 @@ public class NavActivity extends AppCompatActivity
 
         switch (id) {
             case R.id.nav_profil:
+                Intent i = new Intent(NavActivity.this, MyProfile.class);
+                startActivity(i);
                 break;
             case R.id.nav_favorite:
                 break;
             case R.id.nav_isLogged:
                 break;
             case R.id.expositions:
-                Intent i = new Intent(NavActivity.this, Oeuvres.class);
-                startActivity(i);
+                Intent j = new Intent(NavActivity.this, Oeuvres.class);
+                startActivity(j);
                 //fragmentManager.beginTransaction().replace(R.id.activity_main, new Oeuvres()).commit();
                 break;
         }

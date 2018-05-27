@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/isiko_black">
 
-    <Button
-        android:id="@+id/ExhibitionsBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="92dp"
-        android:background="@drawable/filled_button"
-        android:onClick="btnExhibitions"
-        android:text="Actualiser"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp"
-        android:padding="5dp"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context=".Oeuvres"
+        android:background="@color/isiko_black"
+        >
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/ExhibitionsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/filled_button"
+            android:onClick="btnExhibitions"
+            android:padding="5dp"
+            android:text="Actualiser"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <ListView
+            android:id="@+id/listv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+
+    </LinearLayout>

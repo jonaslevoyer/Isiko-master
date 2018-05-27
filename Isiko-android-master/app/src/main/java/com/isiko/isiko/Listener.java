@@ -2,9 +2,6 @@ package com.isiko.isiko;
 
 import android.media.Image;
 
-/**
- * Created by kaka on 26-Feb-18.
- */
 
 public class Listener {
     protected String id;

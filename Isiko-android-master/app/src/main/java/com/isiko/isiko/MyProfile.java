@@ -29,8 +29,8 @@ public class MyProfile extends AppCompatActivity {
         setContentView(R.layout.my_profile);
 
     }
-    public void btnExhibitions(View v) {
-        String url = "http://api.isiko.io/api/getUser/";
+    public void btnUser(View v) {
+        String url = "http://api.isiko.io/api/getUserDatas/";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest ExhibitionsRequest = new StringRequest(Request.Method.GET, url, new com.android.volley.Response.Listener<String>() {
             @Override
